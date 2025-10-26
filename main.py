@@ -98,7 +98,7 @@ if st.session_state["page"] == "melden":
                 new_entry["Volladresse"] = adresse + ", " + plz + " " + stadt
                 new_entry[["Latitude", "Longitude"]] = new_entry["Volladresse"].apply(get_coords)
                 new_entry.to_csv(CSV_PATH, mode="a", header=False, index=False)
-                st.success("🎉 Vielen Dank! Der Stillraum wurde erfolgreich gemeldet.")
+                st.success("🎉 Vielen Dank! Der Stillraum wurde erfolgreich gemeldet. Du hilfst anderen Eltern, sich besser zurechtzufinden.")
 
     footer_navigation()
     st.stop()

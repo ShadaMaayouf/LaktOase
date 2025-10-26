@@ -74,6 +74,22 @@ Die App verwendet eine CSV-Datei namens `stillraeume_nrw.csv` mit folgendem Aufb
 - Export als PDF oder Excel für Elterngruppen
 - Admin-Dashboard zur Prüfung gemeldeter Einträge
 - Integration mit städtischen APIs oder Elternnetzwerken
+- Die Geolokalisierung kann langsam sein.Lösungen:
+    - die Koordinaten einmalig zu speichern.
+    - Caching für Geolokalisierung
+- Cluster- oder Heatmaps ergänzen.
+- PLZ-Zuordnung prüfen: z. B. über meinestadt.de oder onlinestreet.de
+- Streamlit Themes: Nutze config.toml, um Farben, Schriftarten und Layouts anzupassen.
+- Sticky Fußzeile: Wiedererkennbare Buttons unten — evtl. mit st.columns breiter gestalten.
+- Expander für Details:
+```python
+with st.expander(f"🍼 {row['Name']}"):
+    st.write(f"📍 {row['Adresse']}, {row['PLZ']} {row['Stadtteil']}")
+    st.write(f"🕒 {row['Öffnungszeiten']}")
+    st.write(f"ℹ️ {row['Bemerkung']}")
+```
+- Kartenzoom dynamisch: Passe zoom_start je nach Stadtgröße an.
+- Responsive Design: Nutze st.columns, st.expander, und reduziere Textlänge für mobile Ansicht.
 
 ## 🤝 Mitmachen
 
