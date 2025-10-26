@@ -1,26 +1,84 @@
-# LaktOase
+## 📘 README: Stillraum-Finder NRW
 
-## 🧩 Projektidee: Stillraum-Finder für Düsseldorf
+# 🍼 Stillraum-Finder NRW
 
-### 🔍 Ziel
-Eine interaktive Web-App, die alle öffentlich zugänglichen Stillräume in Düsseldorf nach Postleitzahl filterbar darstellt — inklusive Adresse und ggf. Zusatzinfos wie Öffnungszeiten oder Ausstattung.
+Ein interaktives Webtool zur Anzeige, Filterung und Meldung von Stillräumen in Nordrhein-Westfalen – mit Fokus auf Übersichtlichkeit, Elternfreundlichkeit und Community-Mitwirkung.
 
-### 🛠️ Technologiestack
-- **Frontend & Web-Framework**: [Streamlit](https://streamlit.io/) (einfach, schnell, ideal für Prototypen)
-- **Backend-Datenstruktur**: pandas DataFrame
-- **Datenquelle**: Manuell gepflegte CSV oder JSON-Datei mit Stillraum-Daten (später erweiterbar durch Webscraping oder API)
+## 🎯 Ziel
 
-### 📦 Beispiel-Datenstruktur (CSV oder JSON)
-```csv
-Name,Adresse,PLZ,Stadtteil,Öffnungszeiten,Bemerkung
-Düsseldorf Arcaden Stillraum,Friedrichstraße 133,40217,Friedrichstadt,"Mo-Sa 10-20 Uhr","Neben Kundentoiletten im UG & OG"
-...
+Diese App unterstützt Eltern dabei, schnell und einfach Stillräume in ihrer Umgebung zu finden und neue Orte zu melden. Sie bietet:
+
+- Eine vollständige Übersicht aller bekannten Stillräume in NRW
+- Filterung nach Stadt und Postleitzahl
+- Interaktive Kartenansicht mit Standort-Markern
+- Detailinformationen wie Adresse, Öffnungszeiten und Ausstattung
+- Ein integriertes Meldeformular zur Erweiterung der Datenbank
+
+## 🛠️ Technologien
+
+- **Python 3.9+**
+- **Streamlit** – für die Weboberfläche
+- **pandas** – zur Datenverarbeitung
+- **Folium** & **streamlit-folium** – für die Kartenansicht
+- **geopy** – zur Geolokalisierung von Adressen
+
+## 📦 Installation
+
+```bash
+pip install streamlit pandas folium streamlit-folium geopy
 ```
 
-### 🧭 Nächste Schritte
-1. **Datenbasis aufbauen**: z. B. mit Orten wie Düsseldorf Arcaden.
-2. **PLZ-Zuordnung prüfen**: z. B. über [meinestadt.de](https://home.meinestadt.de/duesseldorf/postleitzahlen) oder [onlinestreet.de](https://onlinestreet.de/plz/D%C3%BCsseldorf.html).
-3. **Design verfeinern**: z. B. mit Kartenansicht (Folium oder Mapbox) oder Icons für Ausstattung.
+## 🚀 Starten der App
 
+```bash
+streamlit run app.py
+```
 
-Wenn du magst, helfe ich dir beim Aufbau der CSV-Datei oder erweitere die App mit Features wie Favoriten, Hebammen-Tipps oder Wickelmöglichkeiten. Bereit für den nächsten Schritt?
+## 📁 Datenstruktur
+
+Die App verwendet eine CSV-Datei namens `stillraeume_nrw.csv` mit folgendem Aufbau:
+
+| Spalte         | Beschreibung                                 |
+|----------------|----------------------------------------------|
+| Name           | Name des Stillraums                          |
+| Adresse        | Straße und Hausnummer                        |
+| PLZ            | Postleitzahl                                 |
+| Stadt          | Stadtname (z. B. Düsseldorf, Köln)           |
+| Stadtteil      | Stadtteil oder Bezirk                        |
+| Öffnungszeiten | Zeitfenster der Verfügbarkeit                |
+| Bemerkung      | Zusätzliche Hinweise (z. B. Ausstattung)     |
+| Latitude       | Geokoordinate (Breitengrad, automatisch berechnet) |
+| Longitude      | Geokoordinate (Längengrad, automatisch berechnet) |
+
+## 🧭 Funktionen
+
+- **Landingpage** mit Begrüßung und Einstieg
+- **Stadt- und PLZ-Auswahl** zur gezielten Filterung
+- **Kartenansicht** mit Marker für jeden Stillraum
+- **Zwei-Spalten-Layout** für übersichtliche Darstellung
+- **Kontaktseite** mit Infos und direktem Button zum Meldeformular
+- **Meldeformular** mit Validierung und CSV-Export
+
+## 🧪 Beispiel-Städte
+
+- Düsseldorf
+- Bonn
+- Köln
+- Leverkusen
+- Duisburg
+- Dortmund
+
+## 🧩 Erweiterungsmöglichkeiten
+
+- Filter nach Ausstattung (z. B. Wickeltisch, barrierefrei)
+- Export als PDF oder Excel für Elterngruppen
+- Admin-Dashboard zur Prüfung gemeldeter Einträge
+- Integration mit städtischen APIs oder Elternnetzwerken
+
+## 🤝 Mitmachen
+
+Du möchtest weitere Stillräume melden oder die App erweitern? Gerne! Öffne ein Issue oder erstelle einen Pull Request.
+
+## 📄 Lizenz
+
+Dieses Projekt steht unter der MIT-Lizenz.
